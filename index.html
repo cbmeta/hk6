@@ -38,8 +38,17 @@ document.getElementById('addToWishlistButton').addEventListener('click', functio
 }, false);
 
 
+//   document.getElementById('addToCartButton').addEventListener('click', function() {
+//   fbq('track', 'AddToCart');
+// }, false);
+
   document.getElementById('addToCartButton').addEventListener('click', function() {
-  fbq('track', 'AddToCart');
+  fbq('init', '1130846952763706', { external_id: 'customer_123' });
+fbq('track', 'AddToCart', {
+    content_type: 'product',
+    currency: 'USD',      // browser only
+    value: 139.99         // in both -> untagged
+  }, { eventID: 'test-750' });
 }, false);
 
 document.getElementById('checkoutButton').addEventListener('click', function() {
